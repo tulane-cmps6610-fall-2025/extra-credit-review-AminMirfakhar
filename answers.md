@@ -90,13 +90,10 @@ property induces a directed acyclic graph that can be used to derive
 ---
 
 6. **Graphs**
-   You learned the cut property for minimum spanning trees. There
-  is another useful fact called the \textit{cycle property} for minimum
-  spanning trees which states the following:
-  
-  Given a graph G that contains a cycle, then the largest weight cycle in that graph
-  \textbf{cannot} be contained in any minimum spanning tree.
+You learned the cut property for minimum spanning trees. There
+is another useful fact called the \textit{cycle property} for minimum
+spanning trees which states the following:
+Given a graph G that contains a cycle, then the largest weight cycle in that graph
+cannot be contained in any minimum spanning tree.Prove the cycle property.
 
-Prove the cycle property.
-
-   - well the easist way to show that is methods like kruskal find the MST with greedy selection of minumum edges and avoiding to create any cycle which shows cycles can not be in ant MST. even if we consider these cycle in the MST since there is connected path between all the nodes then we are able to remove the heaviest edge and still have a MST with a smaller cost which proves the cycle property.
+   - well the easist way to show that is methods like kruskal find the MST with greedy selection of minumum edges and avoiding to create any cycle which shows cycles can not be in ant MST. even if we consider these cycle in the MST since there is connected path     between all the nodes then we are able to remove the heaviest edge and still have a MST with a smaller cost which proves the cycle property.
