@@ -62,7 +62,14 @@ time over all jobs. Prove that scheduling jobs in order
 of their processing times (i.e., shortest-job-first) results in an
 optimal schedule.
 
+    - Claim:
+      Scheduling jobs in non-decreasing order of processing times minimizes the average waiting time.
 
+      consider jobs with processing times $p_1, p_2, \cdots, p_n$. then for each task i the sum of $p_1, \cdots, p_i$ is the waiting time and the sumation of these wating time if C.
+      
+      For a job $j_i$ which is scheduled in schedule $S$, we can say that $W_i$ is the sum of all the processing times of the jobs before position k. now if we consider two adjacent jobs are out of order, by changing their order we can reduce total waiting time.
+      $time difference = (p_j) - (p_i - p_j) = 2p_j - p_i < 0$
+      Since $p_i > p_j$, we have $time difference < 0$.
 
 
 ---
@@ -76,8 +83,8 @@ property induces a directed acyclic graph that can be used to derive
  is possible) and one example that has polylogarithmic (i.e., ideal)
  span.
 
-   - problems with recurent structure have chain of dependencies which cause maximum span. example could be Fibonacci (Naive DP Order) which ends up with span $\in O(n)$
-   - with the balanced recurence tree we can end up with polylogarithmic span like Parallel Prefix Sum (Scan) that has span $\in O(\log n)$
+   - Problems with recurrent structure have chain of dependencies which cause maximum span. example could be Fibonacci (Naive DP Order) which ends up with span $\in O(n)$
+   - With the balanced recurrence tree we can end up with polylogarithmic span like Parallel Prefix Sum (Scan) that has span $\in O(\log n)$
 
 
 ---
@@ -91,3 +98,5 @@ property induces a directed acyclic graph that can be used to derive
   \textbf{cannot} be contained in any minimum spanning tree.
 
 Prove the cycle property.
+
+   - well the easist way to show that is methods like kruskal find the MST with greedy selection of minumum edges and avoiding to create any cycle which shows cycles can not be in ant MST. even if we consider these cycle in the MST since there is connected path between all the nodes then we are able to remove the heaviest edge and still have a MST with a smaller cost which proves the cycle property.
