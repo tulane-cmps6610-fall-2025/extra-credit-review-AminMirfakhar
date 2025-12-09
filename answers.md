@@ -6,13 +6,14 @@ In this extra credit assignment, we will test and review concepts you
    `convert.sh`. Alternatively, you may scan and upload written
    answers to a file named `answers.pdf`.
 
-
+---
 
 1. **Algorithmic Paradigms**
 What is your favorite algorithmic paradigm, and why?
 
    - I personally like graph-based algorithms the most. Many real-world geometric and visual problems—such as navigation, clustering, image segmentation, and network optimization—can be naturally expressed as graph structures, making these algorithms both intuitive and widely applicable. I also enjoy that graph problems span a wide range of difficulty, including many NP-hard challenges, which makes the field intellectually rich and full of interesting open questions.
 
+---
 
 2. **Divide and Conquer**
 Do problems that can be solved by a divide and conquer approach
@@ -23,6 +24,7 @@ a proof. If not, provide a counterexample.
 
 For a counterexample, Given an array, find the element that occurs more than ⌊n/2⌋ times. in this case the global majority may not be the majority in either half and devide and conquer won't be applicable. Then the subproblems' optimal solutions do not determine the optimal global solution. Divide-and-conquer still works, but optimal substructure doesn’t hold.
 
+---
 3. **Randomization**
 We learned in lecture that Quicksort takes $O(n \log n)$ expected
 work. For a random
@@ -49,8 +51,43 @@ comparisons, for a given $c>0$? What does this say about the
 
       which shows that Quicksort is concentrated tightly around its expected O($n \log n$) work. the probability of doing much more than the expected amount decays quickly.
 
+---
 4. **Greedy Algorithms**
+Consider a scheduling problem where we are given $n$ jobs $j_1, j_2,
+\ldots, j_n$,  each of which has a processing time $p_i$. A schedule $S$
+is simply an ordering of jobs; each job will have a \textit{waiting
+time} given by the sum of all processing times of jobs prior to
+it. Let us define the  cost $C(S)$ of a schedule $S$ to be the average waiting
+time over all jobs. Prove that scheduling jobs in order
+of their processing times (i.e., shortest-job-first) results in an
+optimal schedule.
+
+
+
+
+---
 
 5. **Dynamic Programming**
+Problems that can be solved by dynamic programming require the optimal
+substructure property. We showed that the optimal substructure
+property induces a directed acyclic graph that can be used to derive
+ the span of a dynamic programming algorithm. Give one example of an optimal
+ substructure recurrence that has maximum span (i.e., no parallelism
+ is possible) and one example that has polylogarithmic (i.e., ideal)
+ span.
+
+   - problems with recurent structure have chain of dependencies which cause maximum span. example could be Fibonacci (Naive DP Order) which ends up with span $\in O(n)$
+   - with the balanced recurence tree we can end up with polylogarithmic span like Parallel Prefix Sum (Scan) that has span $\in O(\log n)$
+
+
+---
 
 6. **Graphs**
+   You learned the cut property for minimum spanning trees. There
+  is another useful fact called the \textit{cycle property} for minimum
+  spanning trees which states the following:
+  
+  Given a graph G that contains a cycle, then the largest weight cycle in that graph
+  \textbf{cannot} be contained in any minimum spanning tree.
+
+Prove the cycle property.
